@@ -2,4 +2,9 @@
 
     <string name="app_name">CompanyXUser</string>
 
+     <!-- strings form activity main -->
+    <string name="Company">Companys</string>
+    <string name="Offices">Offices</string>
+    <string name="Details">Details</string>
+    
 </resources>
