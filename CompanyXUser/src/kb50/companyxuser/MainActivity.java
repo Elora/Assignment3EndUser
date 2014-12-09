@@ -1,65 +1,28 @@
 package kb50.companyxuser;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TabHost;
-import android.widget.TabHost.TabContentFactory;
-import android.widget.TabHost.TabSpec;
-import android.widget.TabWidget;
-import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTabHost;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
+    private FragmentTabHost mTabHost;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		
-		// by https://gist.github.com/jerolimov/618086
-		TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
-		tabHost.setup();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
-		final TabWidget tabWidget = tabHost.getTabWidget();
-		final FrameLayout tabContent = tabHost.getTabContentView();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		// Get the original tab textviews and remove them from the viewgroup.
-		TextView[] originalTextViews = new TextView[tabWidget.getTabCount()];
-		for (int index = 0; index < tabWidget.getTabCount(); index++) {
-			originalTextViews[index] = (TextView) tabWidget
-					.getChildTabViewAt(index);
-		}
-		tabWidget.removeAllViews();
+        mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
+        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 
-		// Ensure that all tab content childs are not visible at startup.
-		for (int index = 0; index < tabContent.getChildCount(); index++) {
-			tabContent.getChildAt(index).setVisibility(View.GONE);
-		}
+        mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Company"),
+            Company.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("Offices"),
+            Offices.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator("Details"),
+                Details.class, null);
 
-		// Create the tabspec based on the textview childs in the xml file.
-		// Or create simple tabspec instances in any other way...
-		for (int index = 0; index < originalTextViews.length; index++) {
-			final TextView tabWidgetTextView = originalTextViews[index];
-			final View tabContentView = tabContent.getChildAt(index);
-			TabSpec tabSpec = tabHost.newTabSpec((String) tabWidgetTextView
-					.getTag());
-			tabSpec.setContent(new TabContentFactory() {
-				@Override
-				public View createTabContent(String tag) {
-					return tabContentView;
-				}
-			});
-			if (tabWidgetTextView.getBackground() == null) {
-				tabSpec.setIndicator(tabWidgetTextView.getText());
-			} else {
-				tabSpec.setIndicator(tabWidgetTextView.getText(),
-						tabWidgetTextView.getBackground());
-			}
-			tabHost.addTab(tabSpec);
-		}
-	}
-
+    }
 }
