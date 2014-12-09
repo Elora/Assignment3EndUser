@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Details extends Fragment{
+public class DetailsFragment extends Fragment{
 
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

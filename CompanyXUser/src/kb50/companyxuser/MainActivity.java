@@ -18,11 +18,9 @@ public class MainActivity extends FragmentActivity {
         mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 
         mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Company"),
-            Company.class, null);
+            CompanyFragment.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("Offices"),
-            Offices.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator("Details"),
-                Details.class, null);
+            OfficesFragment.class, null);
 
     }
 }

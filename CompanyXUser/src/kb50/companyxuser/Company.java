@@ -1,19 +1,54 @@
 package kb50.companyxuser;
 
+import java.util.List;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-public class Company extends Fragment{
+public class Company {
 
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-	        Bundle savedInstanceState) {
-	        // Inflate the layout for this fragment
-	        View v = inflater.inflate(R.layout.company, container, false);
+	private int id;
+	private String name;
+	private String site;
+	private String info;
+	public String getInfo() {
+		return info;
+	}
 
-	        return v;
-	    }
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	private List<Office> offices;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSite() {
+		return site;
+	}
+
+	public void setSite(String site) {
+		this.site = site;
+	}
+
+	public List<Office> getOffice() {
+		return offices;
+	}
+
+	public void setOffice(List<Office> offices) {
+		this.offices = offices;
+	}
+
 }

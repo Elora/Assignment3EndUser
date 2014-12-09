@@ -1,14 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">CompanyXUser</string>
 
-     <!-- strings form activity main -->
+    <!-- strings form activity main -->
     <string name="Company">Company</string>
     <string name="Offices">Offices</string>
     <string name="Details">Details</string>
-    
+
     <!-- Details page -->
     <string name="tel">Call number</string>
     <string name="address">Show on map</string>
-    
+    <string name="title_activity_office_list">OfficeList</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
 </resources>
