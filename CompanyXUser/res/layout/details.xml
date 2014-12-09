@@ -4,5 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <Button 
+        android:id="@+id/tel"
+        android:text="@string/tel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick" />
+    
+    <Button 
+        android:id="@+id/address"
+        android:text="@string/address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick" />
+    
 
 </LinearLayout>

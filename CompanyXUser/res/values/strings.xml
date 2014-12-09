@@ -3,8 +3,12 @@
     <string name="app_name">CompanyXUser</string>
 
      <!-- strings form activity main -->
-    <string name="Company">Companys</string>
+    <string name="Company">Company</string>
     <string name="Offices">Offices</string>
     <string name="Details">Details</string>
+    
+    <!-- Details page -->
+    <string name="tel">Call number</string>
+    <string name="address">Show on map</string>
     
 </resources>
